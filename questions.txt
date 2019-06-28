@@ -60,8 +60,11 @@ Ships model:
   porte-avion:{type : [], required :true}
   zodiac :{type : [], required :true}
 
-let shipSchema = new mongoose.Schema({
+I would create in ships model with  the following  code, the user can only choose coordonate
+let ships = new Ships({
 	sous-marin: {length :5, coordonate:{x:0, x:5} }
 	porte-avion: {length :10, coordonate:{y:0, y:10} }
 	zodiac : {length :2, coordonate:{y:0, y2} }
 });
+
+ships.save()
