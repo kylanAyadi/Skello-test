@@ -1,0 +1,45 @@
+<div>
+    <h1>home</h1>
+        <div class = "container">
+             <div class ="row">
+                <% @db.each_with_index do |element, index| %>
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                         <div class="card">
+                             <img src="<%= element[:photo].nil? ? "https://unsplash.it/600?image=1": element[:photo] %>" class="card-img-top" alt="...">
+                             <div class="card-body">
+                                 <h5 class="card-title"><%= element[:title] %> </h5>
+                                 <p class="card-text"><%= element[:content][0..50]...%></p>
+                             </div>
+                             <li class="list-group-item">
+                                
+                                <%  if element[:rating]=="1" %>
+                                        <a href="signup.html"><i class="fa fa-star"></i>
+                                <% elsif  element[:rating]=="2" %>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                <%elsif element[:rating]=="3"%>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                <%elsif element[:rating]=="4"%>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                   <%elsif element[:rating]=="5"%>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                    <a href="signup.html"><i class="fa fa-star"></i>
+                                <%end%>
+                            </li>
+                            <div class="card-body">
+                                 <a href="/card/<%= index %>" class="card-link">See details</a>
+                             </div>
+                         </div>
+                    </div>                    
+                <% end %>
+             </div>
+        </div>
+</div>

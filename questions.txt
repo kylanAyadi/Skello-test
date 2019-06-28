@@ -1,0 +1,67 @@
+BACKEND - Programming
+These can be done in any language you're comfortable with
+
+1. Give a regular expression that detects hexadecimal numbers in a text.
+For example, ‘0x0f4’, ‘0acdadecf822eeff32aca5830e438cb54aa722e3’, ‘8BADF00D’ should be detected.
+
+>^(0x|0X)?[a-fA-F0-9]+$ pour javascript
+
+2.Here is the pseudo code of a function that is defined recursively:
+-  f(0) = 1;
+-  f(1) = 3;
+-  f(n)= 3 * f(n-1) - f(n-2);
+Provide an implementation for ‘f’. Bonus points for a non recursive implementation.
+
+>
+
+BACKEND - MySQL
+
+1. Write a CREATE TABLE query for a table storing information on users. It will store:
+  - id,
+  - firstname,
+  - lastname,
+  - gender,
+  - email,
+  - created_at
+
+>CREATE TABLE Test1
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100),
+    gender VARCHAR(6),
+    email VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+2. Write a query on the previous table that lists the 10 most recently added users.
+
+>SELECT * FROM Users ORDER BY created_at DESC LIMIT 10
+
+GENERAL - Creativitynjkn
+Si vous êtes Français, vous pouvez répondre en Français.
+
+1. Describe the color yellow to someone who is blind
+
+> La couleur jaune est une couleur très éclatante, vive, accidulé comme le citron qui est lui même de cette couleur. Il s'agit d'une couleur joyeuse qui représente l'été, la vie, l'énergie. Elle refléte des sensations comme le bonheur, la joie, l'enthousiasme... Le soleil est jaune, cette couleur nous éclaire, nous rassure. En résumé, le jaune ne passe pas inaperçu et ne convient pas aux personnes discrètes.
+
+3. Describe the data model you’d use for a Battleship game. What are the key objects? How will your code use them?
+
+> Users model:
+
+let userSchema = new  mongoose.Schema({
+	player1: { type: String, required: true, minlength:2, maxlength:20, unique: true },
+	player2: { type: String, required: true, minlength:2, maxlength:20, unique: true } 	
+});
+
+
+Ships model:
+  sous-marin :{type : [], required :true}
+  porte-avion:{type : [], required :true}
+  zodiac :{type : [], required :true}
+
+let shipSchema = new mongoose.Schema({
+	sous-marin: {length :5, coordonate:{x:0, x:5} }
+	porte-avion: {length :10, coordonate:{y:0, y:10} }
+	zodiac : {length :2, coordonate:{y:0, y2} }
+});

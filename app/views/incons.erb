@@ -1,0 +1,13 @@
+<li class="list-group-item">
+    <%@db.each do |elem|%>
+    <%  if elem[:rating]==1 %>
+            <a href="signup.html"><i class="fa fa-star"></i>
+    <% elsif  elem[:rating]==2 %>
+        <a href="signup.html"><i class="fa fa-star"></i>
+        <a href="signup.html"><i class="fa fa-star"></i>
+    <%elsif elem[:rating]==3%>
+        <a href="signup.html"><i class="fa fa-star"></i>
+        <a href="signup.html"><i class="fa fa-star"></i>
+        <a href="signup.html"><i class="fa fa-star"></i>
+    <%end%>
+</li>
